@@ -3,6 +3,8 @@ A quick program to automatically input key inputs for things like Daily run, now
 
 This is something I made quickly. If there are problems, I'll work them out. 
 
+The .exe is in the dist folder.
+
 USE 5X SPEED 
 
 This is meant to run after all the tutorial messages are done, and ideally, when you catch a Pokemon, it won't be the first time you catch it. 
