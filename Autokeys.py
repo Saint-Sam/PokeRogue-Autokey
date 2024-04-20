@@ -95,7 +95,7 @@ class App:
         except Exception as e:
             return f"Error focusing window: {str(e)}"
 
-    def run_simulation(self):
+    def run_autokeys(self):
         try:
             input_keys = self.keys_entry.get()
             delay = float(self.delay_entry.get())
@@ -113,14 +113,14 @@ class App:
                 if not self.running.is_set():
                     break
                 self.update_log(f"Starting cycle {cycle + 1} of {repetitions}...")
-                time.sleep(5)  # Increased initial delay for better window focus stability
+                time.sleep(5)  ### Increased initial delay for better window focus stability
 
                 for key in input_keys.split(','):
                     for char in key.strip():
                         if not self.running.is_set():
                             break
                         pydirectinput.press(char)
-                        time.sleep(delay)  # Consider increasing this if keys are not being registered
+                        time.sleep(delay)  
                         self.update_log(f"Pressed '{char}' with a delay of {delay} seconds.")
                 if self.running.is_set():
                     self.update_log("Cycle completed.")
@@ -132,7 +132,7 @@ class App:
 
     def start_thread(self, event=None):
         self.running.clear()
-        threading.Thread(target=self.run_simulation, daemon=True).start()
+        threading.Thread(target=self.run_autokeys, daemon=True).start()
 
     def stop_thread(self, event=None):
         self.running.clear()

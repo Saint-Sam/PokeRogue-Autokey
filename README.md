@@ -1,4 +1,7 @@
 # PokeRogue-Autokey
+
+SHA256: 7982089f5ab4d6a6169e0bd3629cea5f51568d3c43ba91c160107e0d9cff3646
+
 Made to record and execute key inputs for use in Pokerogue. Works best for Daily run.
 
 This is something I made quickly. If there are problems, I'll work them out. 
